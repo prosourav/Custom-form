@@ -10,7 +10,7 @@ const lineHeight = {
     sm:1.2,
     md:1.4,
     lg:1.6
-}
+};
 
 const Label = styled.label`
     font-family: Arial;

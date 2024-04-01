@@ -15,7 +15,7 @@ const lineHeight = {
 const Text = styled.p`
     font-family: Arial;
     font-size:${(props)=>fontSizes[props.size] ?? '1rem'};
-    color: #222;
+    color: ${(props)=> props.required ? "red" : "#222"};
     line-height:${(props)=>lineHeight[props.line] ?? 1.3};
 `;
 

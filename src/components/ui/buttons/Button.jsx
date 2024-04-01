@@ -12,7 +12,6 @@ const Button = styled.button`
     letter-spacing:0.1rem;
     text-transform:uppercase;
     cursor: pointer;
-
     &hover{
         background: #ccc;
     }

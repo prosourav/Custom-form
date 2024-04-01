@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "./hooks/useForm";
 import InputGroup from "./components/form/Inputgroup";
 import Button from "./components/ui/buttons/Button";
@@ -12,6 +12,7 @@ const init = {
 
 const validate = (values) => {
   const errors = {};
+  // console.log(values);
   if (!values.firstName) {
     errors["firstName"] = "First name is required";
   }
@@ -38,12 +39,12 @@ export default function App() {
     clear,
   } = useForm({ init, validate });
 
-  // console.log(state.firstName.value);
   const submit = ({ hasErrors, values, errors }) => {
     if (hasErrors) {
       alert("[ERROR]" + JSON.stringify(errors,null, 2));
     } else {
-      alert("[SUCCESS]" + JSON.stringify(values));
+      console.log(values);
+      // alert("[SUCCESS]" + JSON.stringify(values));
     }
   };
 
@@ -55,12 +56,13 @@ export default function App() {
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
-            width: "40%",
+            width: "30%",
             margin: "5% auto",
           }}
         >
           <InputGroup
             label={"First Name"}
+            required={true}
             name="firstName"
             placeholder={"John"}
             value={state.firstName.value}
@@ -69,8 +71,10 @@ export default function App() {
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
+
           <InputGroup
             label={"Last Name"}
+            required={true}
             name="lastName"
             placeholder={"Doe"}
             value={state.lastName.value}
@@ -79,9 +83,10 @@ export default function App() {
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
-
+          
           <InputGroup
             label={"Email"}
+            required={true}
             name="email"
             placeholder={"johndoe@example.com"}
             value={state.email.value}
@@ -94,6 +99,7 @@ export default function App() {
           <InputGroup
             label={"Password"}
             name="password"
+            required={true}
             placeholder={"********"}
             value={state.password.value}
             onChange={handleChange}

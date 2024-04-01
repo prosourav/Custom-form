@@ -10,7 +10,6 @@ const TextInput = styled.input`
   font-size: 0.9rem;
   font-family: Arial;
   color: #333;
-
   &:focus {
     border: 2px solid skyblue;
   }

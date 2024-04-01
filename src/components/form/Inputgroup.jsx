@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TextInput from "../ui/inputs/TextInput";
 import Label from "../ui/inputs/Label";
+import Text from "../ui/texts/Text";
 
 const Container = styled.div`
   width: 100%;
@@ -25,10 +26,18 @@ export default function InputGroup({
   onChange,
   onFocus,
   onBlur,
+  required,
 }) {
   return (
     <Container>
-      <Label htmlFor={name}>{label}</Label>
+      <Label htmlFor={name}>
+        {label}
+        {required && (
+          <Text required fontSizes={"lg"} style={{ display: "inline", padding:'0px 2px' }}>
+            *
+          </Text>
+        )}
+      </Label>
       <TextInput
         name={name}
         id={name}
