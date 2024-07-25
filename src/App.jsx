@@ -83,7 +83,7 @@ export default function App() {
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
-          
+
           <InputGroup
             label={"Email"}
             required={true}
@@ -123,3 +123,55 @@ export default function App() {
     </div>
   );
 }
+
+// import React, { useState, useEffect } from "react";
+// import InfiniteScroll from "react-infinite-scroll-component";
+
+// const MyComponent = () => {
+//   const [data, setData] = useState([]);
+//   const [page, setPage] = useState(1);
+//   const [loading, setLoading] = useState(false);
+
+//   const fetchData = async () => {
+//     setLoading(true);
+//     // Fetch data from an API or any data source
+//     const response = await fetch(
+//       `https://dummyjson.com/products/?limit=6&skip=${data.length}`
+//     );
+//     const newData = await response.json();
+//     setData([...data, ...newData.products]);
+//     setPage(page + 1);
+//     setLoading(false);
+//   };
+
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <div id="scrollableDiv" style={{ height: "200px", overflowY: "scroll" }}>
+//       <InfiniteScroll
+//         // style={{ height: "400px", border: "1px solid red" }}
+//         dataLength={data.length}
+//         next={fetchData}
+//         hasMore={data.length < 100} // Set to false when there is no more data to load
+//         loader={loading && <h4>Loading...</h4>}
+//         endMessage={ <h4>Sorry no more data...</h4>}
+//         // style={{ overflow: "visible" }}
+//         scrollableTarget="scrollableDiv"
+//       >
+//         {data.map((item, index) => (
+//           <div style={{ border: "1px solid red", padding: "12px" }} key={index}>
+//             {item.title} {index}
+//           </div>
+//         ))}
+//         {/* Render your data */}
+//       </InfiniteScroll>
+//     </div>
+//   );
+// };
+
+// export default MyComponent;
+
+
+
